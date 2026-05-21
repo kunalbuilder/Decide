@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f3ee;
+  --text: #171513;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, #fcfaf6 0%, #f6f3ee 54%, #f1ede7 100%);
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.17) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.25;
+  mix-blend-mode: soft-light;
+}
