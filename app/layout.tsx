@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-instrument-serif",
+});
 
 export const metadata: Metadata = {
-  title: "Decide",
-  description: "Chat-based decision making tool",
+  title: "CTW — Clips That Work",
+  description: "Editorial video studio for creators, founders and modern brands.",
 };
 
 export default function RootLayout({
@@ -17,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
